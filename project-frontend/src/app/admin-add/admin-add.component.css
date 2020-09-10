@@ -1,0 +1,43 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(gray,white);
+}
+mat-card
+{
+    margin:100px;
+    width:35%;
+
+}
+mat-card-content{
+    padding: 0px 30px;
+}
+mat-card-header{
+    text-align:center;
+    display: block;
+}
+mat-card-actions{
+    text-align: center;
+}
+.addBtn{
+    font-size: 18px;
+    width: 20%;
+    color: black;
+    background: white;
+}
+.addBtn:hover{
+    background: gray;
+    color:white;
+
+}
+
+
+mat-icon{
+    cursor: pointer;
+
+}
+
+mat-form-field{
+    width: 100%;
+}

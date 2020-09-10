@@ -1,1 +1,47 @@
-<p>admin-add works!</p>
+<div class="content">
+    <mat-card>
+
+        <form [formGroup]="addAdminForm">
+            <mat-card-header>
+                <mat-card-title>
+                    <span class="mat-display-2">New Admin</span></mat-card-title>
+                <mat-card-subtitle>
+                    <small>Be a part of the team</small></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+
+                <ul type="none">
+                    <li>
+                        <mat-form-field class="form" appearance="outline">
+                            <mat-label>Full Name</mat-label>
+                            <input type="text" matInput formControlName="name" />
+                        </mat-form-field>
+                    </li>
+                    <li>
+                        <mat-form-field class="form" appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input type="email" matInput formControlName="email" />
+                        </mat-form-field>
+                    </li>
+                    <li>
+                        <mat-form-field class="form" appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input [type]="hide ? 'password' : 'text'" matInput formControlName="password" />
+                            <mat-icon (click)="hide = !hide" matSuffix>{{
+                                      hide ? "visibility_off" : "visibility"
+                                    }}</mat-icon>
+                        </mat-form-field>
+
+                    </li>
+
+                </ul>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-stroked-button [disabled]="!addAdminForm.valid" class="addBtn" (click)="add()">
+                    Add
+                </button></mat-card-actions>
+
+        </form>
+    </mat-card>
+</div>

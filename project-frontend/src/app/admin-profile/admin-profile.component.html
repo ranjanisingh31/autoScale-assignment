@@ -1,1 +1,54 @@
-<p>admin-profile works!</p>
+<div class="content">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <span class="mat-display-2">Profile</span></mat-card-title>
+            <mat-card-subtitle>
+                <small>Welcome !!!</small></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="existingUserForm">
+                <table>
+                    <tr>
+                        <td style="padding: 10px;">
+
+                            <mat-form-field class="form" appearance="outline">
+                                <mat-label>List Of Admins</mat-label>
+                                <mat-select formControlName="name" (selectionChange)="change()">
+                                    <mat-option *ngFor="let name of admins" [value]="name">{{name}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </td>
+                        <td>
+                            <button mat-icon-button class="addBtn" (click)="addNewAdmin()">
+                                <mat-icon>add</mat-icon>
+                            </button></td>
+                    </tr>
+                </table>
+            </form>
+            <div class="sub-content" *ngIf="flag">
+                <div class="iconBtn">
+                    <button mat-icon-button class="deleteBtn" (click)="delete()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                    <button mat-icon-button (click)='clear()' class="clear">
+                        <mat-icon>clear</mat-icon>
+                    </button>
+                </div>
+                <mat-grid-list cols="2" rowHeight="50px" gutterSize="10px">
+                    <mat-grid-tile>Admin name</mat-grid-tile>
+                    <mat-grid-tile>
+                        {{selectedUser}}</mat-grid-tile>
+                    <mat-grid-tile>Email</mat-grid-tile>
+                    <mat-grid-tile>Email</mat-grid-tile>
+
+                </mat-grid-list>
+
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+
+        </mat-card-actions>
+    </mat-card>
+
+</div>

@@ -1,0 +1,72 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(gray,white);
+}
+mat-card
+{
+    margin:100px;
+    width:40%;
+
+}
+mat-card-content{
+    padding: 0px 30px;
+    width: 100%;
+}
+mat-card-header{
+    text-align:center;
+    display: block;
+}
+mat-card-actions{
+    text-align: center;
+}
+.addBtn{
+    font-size: 18px;
+    width: 40px;
+    color: black;
+    background: white;
+    margin-bottom: 20px;
+}
+.addBtn:hover{
+    background:orange;
+    color:white;
+
+}
+
+
+
+
+
+.deleteBtn:hover{
+    background: red;
+    color:white;
+}
+
+
+mat-grid-tile{
+        background: aliceblue;
+        font-weight: 500;
+    letter-spacing: 1px;
+}
+.sub-content{
+ 
+    padding:10px;
+    border: 1px solid lightgray;
+    margin: 5px;
+}
+
+.clear:hover{
+    background: skyblue;
+    color:white;
+}
+.iconBtn{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+table,td,mat-form-field{
+    width: 100%;
+}

@@ -1,0 +1,20 @@
+.space{
+    flex: 1 1 auto;
+}
+mat-toolbar{
+    background:rgb(0,0,0);
+}
+button{
+        margin: 0px 10px;
+    font-size: 18px;
+    width: 12%;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: black;
+    text-shadow: 1px 1px 2px grey;
+    background: white;
+}
+button:hover{
+    background: gray;
+    color:white;
+}
