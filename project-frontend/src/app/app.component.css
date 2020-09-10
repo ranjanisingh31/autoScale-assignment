@@ -4,8 +4,8 @@
 mat-toolbar{
     background:rgb(0,0,0);
 }
-button{
-        margin: 0px 10px;
+a{
+    margin: 0px 10px;
     font-size: 18px;
     width: 12%;
     letter-spacing: 1.5px;
@@ -14,7 +14,7 @@ button{
     text-shadow: 1px 1px 2px grey;
     background: white;
 }
-button:hover{
+a:hover{
     background: gray;
     color:white;
 }

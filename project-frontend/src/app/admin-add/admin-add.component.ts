@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, Form } from "@angular/forms";
+import { FormBuilder, Validators } from "@angular/forms";
+import { UsersService } from '../users.service';
+import { HttpErrorResponse } from "@angular/common/http";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-admin-add',
@@ -8,7 +11,7 @@ import { FormBuilder, Validators, Form } from "@angular/forms";
 })
 export class AdminAddComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private service: UsersService, private route: Router) { }
 
   //icon
   public hide = true;
@@ -22,6 +25,25 @@ export class AdminAddComponent implements OnInit {
 
   //on click add
   add() {
+    this.service.registerUser(this.addAdminForm.value).subscribe(
+      (res) => {
+        // localStorage.setItem("token", res.token);
+
+        alert(res.message);
+        this.route.navigate(['/profile']);
+      },
+      (err) => {
+        if (err instanceof HttpErrorResponse) {
+          if (err.status === 401) {
+            alert(err.error.message + " Please Register again!!!");
+            this.addAdminForm.reset();
+          } else {
+            alert(err.statusText + " Try Again!!!");
+            this.addAdminForm.reset();
+          }
+        }
+      }
+    );
 
   }
 

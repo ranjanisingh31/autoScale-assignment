@@ -14,8 +14,9 @@
 
                             <mat-form-field class="form" appearance="outline">
                                 <mat-label>List Of Admins</mat-label>
-                                <mat-select formControlName="name" (selectionChange)="change()">
-                                    <mat-option *ngFor="let name of admins" [value]="name">{{name}}</mat-option>
+                                <mat-select formControlName="name" (selectionChange)="change($event)">
+                                    <mat-option *ngFor="let admin of admins" [value]="admin.email">{{admin.name}}
+                                    </mat-option>
                                 </mat-select>
                             </mat-form-field>
                         </td>
@@ -40,7 +41,7 @@
                     <mat-grid-tile>
                         {{selectedUser}}</mat-grid-tile>
                     <mat-grid-tile>Email</mat-grid-tile>
-                    <mat-grid-tile>Email</mat-grid-tile>
+                    <mat-grid-tile>{{selectedEmail}}</mat-grid-tile>
 
                 </mat-grid-list>
 

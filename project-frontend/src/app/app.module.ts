@@ -9,6 +9,8 @@ import { AdminAddComponent } from './admin-add/admin-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material/material.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from "@angular/common/http";
+import { UsersService } from "./users.service";
 
 @NgModule({
   declarations: [
@@ -23,9 +25,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
