@@ -27,7 +27,7 @@ router.post("/register", verifyToken, (req, res) => {
                 } else {
                     // authentication
                     let payload = {
-                        subject: data._id
+                        subject: data1._id
                     };
                     let token = jwt.sign(payload, "registerKey");
 

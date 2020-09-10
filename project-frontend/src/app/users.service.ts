@@ -10,8 +10,8 @@ import { Router } from "@angular/router";
 export class UsersService {
 
   constructor(private http: HttpClient, private route: Router) { }
-
-  private base_url = "http://localhost:3000/api/";
+  // private base_url = "http://localhost:3000/api/";
+  private base_url = "https://algoscale-assignment.herokuapp.com/api/";
 
   //add new admin
   registerUser(userData): Observable<admin> {
