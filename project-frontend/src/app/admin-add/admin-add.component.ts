@@ -27,8 +27,7 @@ export class AdminAddComponent implements OnInit {
   add() {
     this.service.registerUser(this.addAdminForm.value).subscribe(
       (res) => {
-        // localStorage.setItem("token", res.token);
-
+        localStorage.setItem("token", res.token);
         alert(res.message);
         this.route.navigate(['/profile']);
       },

@@ -9,15 +9,17 @@ import { AdminAddComponent } from './admin-add/admin-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./material/material.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { UsersService } from "./users.service";
+import { AuthGuard } from "./auth.guard";
+import { TokenInterceptorService } from "./token-interceptor.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     AdminLoginComponent,
     AdminProfileComponent,
-    AdminAddComponent
+    AdminAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,9 +28,15 @@ import { UsersService } from "./users.service";
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
-  providers: [UsersService],
+  providers: [UsersService, AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

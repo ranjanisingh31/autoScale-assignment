@@ -27,7 +27,7 @@ export class AdminLoginComponent implements OnInit {
 
     this.service.loginUser(this.loginForm.value).subscribe(
       (res) => {
-        // localStorage.setItem("token", res.token);
+        localStorage.setItem("token", res.token);
         alert(res.message);
         this.route.navigate(['/profile']);
       },

@@ -2,8 +2,8 @@
   <header>
     <mat-toolbar>
       <span class="space"></span>
-      <a routerLink="/" mat-stroked-button>Login</a>
-      <a routerLink="/" mat-stroked-button>Logout</a>
+      <a routerLink="/" mat-stroked-button *ngIf="!service.loggedIn()">Login</a>
+      <a routerLink="/" mat-stroked-button *ngIf="service.loggedIn()" (click)="service.loggedOut()">Logout</a>
     </mat-toolbar>
   </header>
 </div>

@@ -3,5 +3,6 @@ export interface admin {
     email: string;
     password: string;
     message: string;
+    token: string;
 
 }
